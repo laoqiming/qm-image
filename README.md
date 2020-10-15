@@ -21,6 +21,14 @@
 | error  | event.detail = {errMsg}        | 当错误发生时触发     |
 | load   | event.detail = {height, width} | 当图片载入完毕时触发 |
 
+## NPM安装
+
+```
+npm i laoqiming/qm-image
+```
+
+
+
 ## 示例代码
 
 ```html
