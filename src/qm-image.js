@@ -39,6 +39,10 @@ Component({
     errorImage: {
       type: String,
       value: './assets/error.png'
+    },
+    hidden: {
+      type: Boolean,
+      value: false
     }
   },
 
@@ -51,18 +55,25 @@ Component({
   },
   observers: {
     src() {
+      this.checkEmpty()
+    }
+  },
+  attached() {
+    this.checkEmpty()
+  },
+  /**
+   * 组件的方法列表
+   */
+  methods: {
+    checkEmpty() {
+      this.data.src = this.data.src || ''
       if (this.data.src === '') {
         // src 为空时不会触发error事件，直接使用错误图片替换
         this.setData({
           src: this.data.errorImage
         })
       }
-    }
-  },
-  /**
-   * 组件的方法列表
-   */
-  methods: {
+    },
     onError(e) {
       const imagePath = this.data.src.replace(/[&?]r-[.\d]+$/g, '')
       if (!/^https?:\/\/[^/]+\/?$/i.test(imagePath)) {
