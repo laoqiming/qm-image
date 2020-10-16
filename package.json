@@ -1,6 +1,6 @@
 {
   "name": "qm-image",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "description": "微信小程序图片增强自定义组件image",
   "main": "miniprogram_dist/qm-image.js",
   "scripts": {
