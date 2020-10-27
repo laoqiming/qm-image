@@ -56,6 +56,10 @@ Component({
   observers: {
     src() {
       this.checkEmpty()
+      if (!/[&?]r-[.\d]+$/g.test(this.data.src)) {
+        // 当不是内部修改的地址时，重置计数
+        this.data.loadCount = 0
+      }
     }
   },
   attached() {
